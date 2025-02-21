@@ -14,7 +14,7 @@ const Units = sequelize.define("Units", {
     description: {
         type: DataTypes.STRING,
     },
-    workPlaceId: {
+    workplaceId: {
         type: DataTypes.INTEGER,
         references: {
             model: Workplaces,
@@ -29,7 +29,7 @@ const Units = sequelize.define("Units", {
     }
 });
 
-Units.belongsTo(Workplaces, { foreignKey: "workPlaceId" });
-Workplaces.hasMany(Units, { foreignKey: "workPlaceId" });
+Units.belongsTo(Workplaces, { foreignKey: "workplaceId" });
+Workplaces.hasMany(Units, { foreignKey: "workplaceId" });
 
 export default Units;

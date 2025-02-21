@@ -11,11 +11,22 @@ import DocumentTypes from "./models/document_types.js";
 import Title from "./models/titles.js";
 import AuditLogs from "./models/audit_logs.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
+import authRoute from "./routes/authRoute.js";
+import workplaceRoute from "./routes/workplaceRoute.js";
+import unitRoute from "./routes/unitRoute.js";
+import titleRoute from "./routes/titleRoute.js";
+import auditLog from "./middlewares/auditLog.js";
 const PORT = process.env.PORT || 3005;
 configDotenv();
 const app = express();
 app.use(express.json());
 
+app.use(auditLog);
+
+app.use('/api/auth', authRoute);
+app.use('/api/workplace', workplaceRoute);
+app.use('/api/unit', unitRoute);
+app.use('/api/title', titleRoute)
 
 app.use(errorHandler);
 

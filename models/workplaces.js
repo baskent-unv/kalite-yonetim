@@ -8,7 +8,8 @@ const Workplaces = sequelize.define("Workplaces", {
     },
     code: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     status: {
         type: DataTypes.BOOLEAN,

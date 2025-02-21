@@ -1,5 +1,5 @@
-import AuditLogs from "../models/audit_logs";
-import CustomError from "../utils/CustomError"
+import AuditLogs from "../models/audit_logs.js";
+import CustomError from "../utils/CustomError.js"
 
 export const logAudit = async (userId, action, description, ipAddress, userAgent) => {
     try {

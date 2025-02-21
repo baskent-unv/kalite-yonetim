@@ -14,9 +14,15 @@ const User = sequelize.define("User", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
     email: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     password: {
         type: DataTypes.STRING,
@@ -29,6 +35,7 @@ const User = sequelize.define("User", {
             key: "id"
         },
         allowNull: false,
+        defaultValue: 1
     },
     workplaceId: {
         type: DataTypes.INTEGER,
