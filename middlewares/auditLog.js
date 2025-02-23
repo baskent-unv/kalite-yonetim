@@ -14,7 +14,7 @@ const auditLog = async (req, res, next) => {
     if (userId) {
         await logAudit(userId, action, description, ipAddress, userAgent);
     }
-
+    console.log(ipAddress,userAgent, 'ip');
     next();
 };
 

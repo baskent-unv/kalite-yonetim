@@ -6,80 +6,80 @@ import Title from "./titles.js";
 import Roles from "./roles.js";
 
 const User = sequelize.define("User", {
-    firstname: {
-        type: DataTypes.STRING,
-        allowNull: false
+  firstname: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  lastname: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  roleId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Roles,
+      key: "id",
     },
-    lastname: {
-        type: DataTypes.STRING,
-        allowNull: false
+    allowNull: false,
+    defaultValue: 1,
+  },
+  workplaceId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Workplaces,
+      key: "id",
     },
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+    allowNull: false,
+  },
+  unitId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Units,
+      key: "id",
     },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+    allowNull: false,
+  },
+  titleId: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: Title,
+      key: "id",
     },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    roleId: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: Roles,
-            key: "id"
-        },
-        allowNull: false,
-        defaultValue: 1
-    },
-    workplaceId: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: Workplaces,
-            key: "id"
-        },
-        allowNull: false
-    },
-    unitId: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: Units,
-            key: "id"
-        },
-        allowNull: false
-    },
-    titleId: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: Title,
-            key: "id"
-        },
-        allowNull: false
-    },
-    status: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: 1
-    },
-    resetToken: {
-        type: DataTypes.STRING,
-    },
-    resetTokenExpires: {
-        type: DataTypes.DATE
-    },
-    loginCount: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        defaultValue: 0
-    },
-    lastLogin: {
-        type: DataTypes.DATE,
-    }
+    allowNull: false,
+  },
+  status: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: 1,
+  },
+  resetToken: {
+    type: DataTypes.STRING,
+  },
+  resetTokenExpires: {
+    type: DataTypes.DATE,
+  },
+  loginCount: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
+  },
+  lastLogin: {
+    type: DataTypes.DATE,
+  },
 });
 
 Workplaces.hasMany(User, { foreignKey: "workplaceId" });
@@ -93,5 +93,4 @@ User.belongsTo(Title, { foreignKey: "titleId" });
 
 Roles.hasMany(User, { foreignKey: "roleId" });
 User.belongsTo(Roles, { foreignKey: "roleId" });
-
 export default User;

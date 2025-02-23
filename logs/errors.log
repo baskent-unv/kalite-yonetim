@@ -1,0 +1,303 @@
+2025-02-23T11:12:40.816Z - ERROR: Token bulunamadı, giriş yapmalısınız.
+Error: Token bulunamadı, giriş yapmalısınız.
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:11:19)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T14:57:52.241Z - ERROR: Tokenin süresi dolmuş.
+Error: Tokenin süresi dolmuş.
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:35:25)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T14:58:15.067Z - ERROR: notNull Violation: Categories.documentTypeId cannot be null
+SequelizeValidationError: notNull Violation: Categories.documentTypeId cannot be null
+    at InstanceValidator._validate (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\instance-validator.js:50:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async InstanceValidator._validateAndRunHooks (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\instance-validator.js:60:7)
+    at async InstanceValidator.validate (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\instance-validator.js:54:12)
+    at async model.save (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\model.js:2426:7)
+    at async Categories.create (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\model.js:1362:12)
+    at async createCategory (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/category.js:25:25)
+
+2025-02-23T15:06:40.337Z - ERROR: [object Object]
+Error: [object Object]
+    at createCategory (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/category.js:10:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T15:06:54.806Z - ERROR: Döküman tipi boş bırakılamaz.
+Error: Döküman tipi boş bırakılamaz.
+    at createCategory (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/category.js:10:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T15:07:38.902Z - ERROR: Döküman tipi boş bırakılamaz.
+Error: Döküman tipi boş bırakılamaz.
+    at createCategory (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/category.js:10:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T15:07:45.743Z - ERROR: Döküman tipi boş bırakılamaz.
+Error: Döküman tipi boş bırakılamaz.
+    at createCategory (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/category.js:10:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T15:08:15.284Z - ERROR: Döküman tipi boş bırakılamaz.
+Error: Döküman tipi boş bırakılamaz.
+    at createCategory (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/category.js:10:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T15:16:21.115Z - ERROR: Bu kategori ismi zaten kullanılıyor
+Error: Bu kategori ismi zaten kullanılıyor
+    at createCategory (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/category.js:11:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:32:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T17:28:31.624Z - ERROR: Tokenin süresi dolmuş.
+Error: Tokenin süresi dolmuş.
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:35:25)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:47:12)
+
+2025-02-23T17:28:52.141Z - ERROR: Sadece pdf türünde ki dosyaları yükleyebilirsiniz.
+Error: Sadece pdf türünde ki dosyaları yükleyebilirsiniz.
+    at fileFilter (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/config/multerConfig.js:21:7)
+    at wrappedFileFilter (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\busboy\lib\types\multipart.js:567:19)
+
+2025-02-23T17:29:59.674Z - ERROR: Sadece pdf türünde ki dosyaları yükleyebilirsiniz.
+Error: Sadece pdf türünde ki dosyaları yükleyebilirsiniz.
+    at fileFilter (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/config/multerConfig.js:21:7)
+    at wrappedFileFilter (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\streamsearch\lib\sbmh.js:200:10)
+    at SBMH.push (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\busboy\lib\types\multipart.js:567:19)
+
+2025-02-23T17:31:23.481Z - ERROR: Unknown column 'workplaceId' in 'field list'
+Error
+    at Query.run (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\dialects\mysql\query.js:52:25)
+    at C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async MySQLQueryInterface.select (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async document.findAll (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\model.js:1140:21)
+    at async document.findOne (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\model.js:1240:12)
+    at async uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:18:30)
+
+2025-02-23T17:32:39.314Z - ERROR: Eklemek istediğiniz zaten mevcut!
+Error: Eklemek istediğiniz zaten mevcut!
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:28:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T17:46:49.736Z - ERROR: Eklemek istediğiniz döküman zaten mevcut!
+Error: Eklemek istediğiniz döküman zaten mevcut!
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:33:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T17:47:43.151Z - ERROR: Eklemek istediğiniz döküman zaten mevcut!
+Error: Eklemek istediğiniz döküman zaten mevcut!
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:33:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T17:48:27.295Z - ERROR: Eklemek istediğiniz döküman zaten mevcut!
+Error: Eklemek istediğiniz döküman zaten mevcut!
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:33:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T17:48:57.176Z - ERROR: Eklemek istediğiniz döküman zaten mevcut!
+Error: Eklemek istediğiniz döküman zaten mevcut!
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:33:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T19:44:54.081Z - ERROR: Tokenin süresi dolmuş.
+Error: Tokenin süresi dolmuş.
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:35:25)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:47:12)
+
+2025-02-23T19:51:13.152Z - ERROR: WHERE parameter "unitId" has invalid "undefined" value
+Error: WHERE parameter "unitId" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1746:13)
+    at C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1737:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\dialects\abstract\query-generator.js:1735:35)
+    at MySQLQueryGenerator.getWhereConditions (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\dialects\abstract\query-generator.js:2078:19)
+    at MySQLQueryGenerator.selectQuery (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\dialects\abstract\query-generator.js:991:28)
+    at MySQLQueryInterface.select (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:59)
+    at document.findAll (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\model.js:1140:47)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async document.findOne (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\sequelize\lib\model.js:1240:12)
+
+2025-02-23T19:52:38.251Z - ERROR: Döküman ismi boş olamaz.
+Error: Döküman ismi boş olamaz.
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:10:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T19:59:25.483Z - ERROR: Döküman ismi boş olamaz.
+Error: Döküman ismi boş olamaz.
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:11:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:00:39.497Z - ERROR: Eklemek istediğiniz döküman zaten mevcut!
+Error: Eklemek istediğiniz döküman zaten mevcut!
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:38:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:01:29.317Z - ERROR: Bu kategoriyi seçebilmek için bir birim seçmelisiniz.
+Error: Bu kategoriyi seçebilmek için bir birim seçmelisiniz.
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:52:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:03:45.864Z - ERROR: Cannot read properties of null (reading 'documentTypeId')
+TypeError: Cannot read properties of null (reading 'documentTypeId')
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:51:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:04:31.129Z - ERROR: Cannot read properties of null (reading 'documentTypeId')
+TypeError: Cannot read properties of null (reading 'documentTypeId')
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:51:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:04:48.785Z - ERROR: Cannot read properties of null (reading 'documentTypeId')
+TypeError: Cannot read properties of null (reading 'documentTypeId')
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:51:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:06:09.434Z - ERROR: Cannot read properties of null (reading 'documentTypeId')
+TypeError: Cannot read properties of null (reading 'documentTypeId')
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:51:44)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:08:27.941Z - ERROR: LŞütfen geçerli bir kategori seçin
+Error: LŞütfen geçerli bir kategori seçin
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:11:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:10:52.352Z - ERROR: Bu kategoriyi seçebilmek için bir birim seçmelisiniz.
+Error: Bu kategoriyi seçebilmek için bir birim seçmelisiniz.
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:52:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:11:08.917Z - ERROR: Seçtiğiniz kategori bir birimin altında yer alamaz.
+Error: Seçtiğiniz kategori bir birimin altında yer alamaz.
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:46:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:11:18.067Z - ERROR: Eklemek istediğiniz döküman zaten mevcut!
+Error: Eklemek istediğiniz döküman zaten mevcut!
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:38:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:12:06.114Z - ERROR: Eklemek istediğiniz döküman zaten mevcut!
+Error: Eklemek istediğiniz döküman zaten mevcut!
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:38:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:27:33.770Z - ERROR: Lütfen geçerli bir kategori seçin
+Error: Lütfen geçerli bir kategori seçin
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:11:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:34:17.175Z - ERROR: Bu kategoriyi seçebilmek için bir birim seçmelisiniz.
+Error: Bu kategoriyi seçebilmek için bir birim seçmelisiniz.
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:52:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:34:24.249Z - ERROR: Bu kategoriyi seçebilmek için bir birim seçmelisiniz.
+Error: Bu kategoriyi seçebilmek için bir birim seçmelisiniz.
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:52:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:34:39.983Z - ERROR: Döküman ismi boş olamaz.
+Error: Döküman ismi boş olamaz.
+    at uploadDocument (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/document.js:11:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:51:09.973Z - ERROR: Tokenin süresi dolmuş.
+Error: Tokenin süresi dolmuş.
+    at isAuth (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/isAuth.js:35:25)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\index.js:280:10)
+
+2025-02-23T20:51:31.273Z - ERROR: Bu işyeri kodu zaten kullanılıyor
+Error: Bu işyeri kodu zaten kullanılıyor
+    at updateWorkplace (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/workplace.js:44:17)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at auditLog (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/auditLog.js:18:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-02-23T20:59:23.884Z - ERROR: Geçersiz statü değeri girmeye çakışıyorsun. Sadece 1 veya 0 değerleri kabul edilir.
+Error: Geçersiz statü değeri girmeye çakışıyorsun. Sadece 1 veya 0 değerleri kabul edilir.
+    at changeWorkplaceStatus (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/controllers/workplace.js:69:7)
+    at Layer.handle [as handle_request] (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\ereny\OneDrive\Masaüstü\kalite-yonetim\node_modules\express\lib\router\route.js:149:13)
+    at auditLog (file:///C:/Users/ereny/OneDrive/Masa%C3%BCst%C3%BC/kalite-yonetim/middlewares/auditLog.js:18:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+

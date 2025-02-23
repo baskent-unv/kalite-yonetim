@@ -1,21 +1,21 @@
 import { body } from "express-validator";
 import CustomError from "../utils/CustomError.js";
-import Title from "../models/titles.js";
+import Roles from "../models/roles.js";
 
-export const titleValidator = [
+export const roleValidator = [
   body("name")
     .notEmpty()
-    .withMessage("Çalışma ünvanı boş olamaz.")
+    .withMessage("Rol adı boş olamaz.")
     .trim()
     .custom(async (name) => {
-      const existingTitle = await Title.findOne({
+      const existingRole = await Roles.findOne({
         where: {
           name: name.toLowerCase(),
         },
       });
-      if (existingTitle) {
+      if (existingRole) {
         throw new CustomError(
-          "Bu çalışma ünvanı zaten mevcut",
+          "Bu rol zaten mevcut",
           400,
           "validation"
         );

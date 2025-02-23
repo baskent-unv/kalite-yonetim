@@ -3,6 +3,7 @@ import { sequelize } from "../config/dbConfig.js";
 import Categories from "./categories.js";
 import Units from "./units.js";
 import DocumentTypes from "./document_types.js";
+import Workplaces from "./workplaces.js";
 
 const Documents = sequelize.define("document", {
     name: {
@@ -17,6 +18,14 @@ const Documents = sequelize.define("document", {
         },
         allowNull: false
     },
+    workplaceId: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Workplaces,
+            key: 'id'
+        },
+        allowNull: false
+    },
     unitId: {
         type: DataTypes.INTEGER,
         references: {
@@ -25,6 +34,7 @@ const Documents = sequelize.define("document", {
         },
     },
     documentTypeId: {
+        // Döküman tipi kullanıcıdan istenmeyecek, eğer birim seçildiyse arka planda birime özel tip olarak seçilecek aksi halde ise genel tip olarak
         type: DataTypes.INTEGER,
         references: {
             model: DocumentTypes,
@@ -36,6 +46,10 @@ const Documents = sequelize.define("document", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    fileSize: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     status: {
         type: DataTypes.BOOLEAN,
         defaultValue: 1,
@@ -44,7 +58,10 @@ const Documents = sequelize.define("document", {
 });
 
 Categories.hasMany(Documents, { foreignKey: "categoryId" });
-Documents.belongsTo(Categories, { foreignKey: "screenId" });
+Documents.belongsTo(Categories, { foreignKey: "categoryId" });
+
+Workplaces.hasMany(Documents, { foreignKey: "workplaceId" });
+Documents.belongsTo(Workplaces, { foreignKey: "workplaceId" });
 
 Units.hasMany(Documents, { foreignKey: "unitId" });
 Documents.belongsTo(Units, { foreignKey: "unitId" });
