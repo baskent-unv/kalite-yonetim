@@ -2,16 +2,20 @@ import { body } from "express-validator";
 import CustomError from "../utils/CustomError.js";
 import Units from "../models/units.js";
 import Workplaces from "../models/workplaces.js";
+import { Op } from "sequelize";
+import wordFormatter from "../utils/wordFormatter.js";
 
-export const unitValidator = [
+export const unitValidator = (isUpdate = false) => [
   body("name")
     .notEmpty()
     .withMessage("Birim ismi boş olamaz.")
     .trim()
-    .custom(async (name) => {
+    .custom(async (name, { req }) => {
+      const id = req.params.id;
       const existingUnit = await Units.findOne({
         where: {
-          name: name.toLowerCase(),
+          name: wordFormatter(name),
+          ...(isUpdate && id ? { id: { [Op.ne]: id } } : {})
         },
       });
       if (existingUnit) {
@@ -26,10 +30,12 @@ export const unitValidator = [
     .notEmpty()
     .withMessage("Birim kodu boş olamaz.")
     .trim()
-    .custom(async (code) => {
+    .custom(async (code, { req }) => {
+      const id = req.params.id;
       const existingUnit = await Units.findOne({
         where: {
           code: code.toLowerCase(),
+          ...(isUpdate && id ? { id: { [Op.ne]: id } } : {})
         },
       });
       if (existingUnit) {
@@ -47,7 +53,7 @@ export const unitValidator = [
     .withMessage("Geçerli bir iş yeri seçin.")
     .custom(async (workplaceId) => {
       const existingWorkplace = await Workplaces.findByPk(workplaceId);
-      if (existingWorkplace) {
+      if (!existingWorkplace) {
         throw new CustomError(
           "Lütfen geçerli bir işyeri seçin",
           401,

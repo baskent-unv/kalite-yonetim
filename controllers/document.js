@@ -73,3 +73,7 @@ export const uploadDocument = async (req, res, next) => {
     return next(err);
   }
 };
+
+export const updateDocument = async (req, res ,next) => {
+  
+}

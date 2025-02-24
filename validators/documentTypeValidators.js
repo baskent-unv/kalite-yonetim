@@ -2,16 +2,20 @@ import { body } from "express-validator";
 import CustomError from "../utils/CustomError.js";
 import DocumentTypes from "../models/document_types.js";
 import Categories from "../models/categories.js";
+import wordFormatter from "../utils/wordFormatter.js";
+import { Op } from "sequelize";
 
-export const documentTypeValidator = [
+export const documentTypeValidator = (isUpdate = false) => [
   body("name")
     .notEmpty()
     .withMessage("Döküman tipi adı boş olamaz.")
     .trim()
-    .custom(async (name) => {
+    .custom(async (name, { req }) => {
+      const { id } = req.params;
       const existingDocumentType = await Categories.findOne({
         where: {
-          name: name.toLowerCase(),
+          name: wordFormatter(name),
+          ...(isUpdate && id ? { id: { [Op.ne]: id } } : {})
         },
       });
       if (existingDocumentType) {

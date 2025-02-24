@@ -1,16 +1,20 @@
 import { body } from "express-validator";
 import CustomError from "../utils/CustomError.js";
 import Title from "../models/titles.js";
+import wordFormatter from "../utils/wordFormatter.js";
+import { Op } from "sequelize";
 
-export const titleValidator = [
+export const titleValidator = (isUpdate = false) => [
   body("name")
     .notEmpty()
     .withMessage("Çalışma ünvanı boş olamaz.")
     .trim()
-    .custom(async (name) => {
+    .custom(async (name, { req }) => {
+      const id = req.params.id;
       const existingTitle = await Title.findOne({
         where: {
-          name: name.toLowerCase(),
+          name: wordFormatter(name),
+          ...(isUpdate && id ? { id: { [Op.ne]: id } } : {})
         },
       });
       if (existingTitle) {

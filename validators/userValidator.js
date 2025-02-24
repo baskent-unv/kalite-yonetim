@@ -38,7 +38,7 @@ export const registerValidator = [
     .withMessage("Geçerli bir iş yeri seçin.")
     .custom(async (workplaceId) => {
       const existingWorkplace = await Workplaces.findByPk(workplaceId);
-      if (existingWorkplace) {
+      if (!existingWorkplace) {
         throw new CustomError(
           "Lütfen geçerli bir işyeri seçin",
           401,
@@ -53,7 +53,7 @@ export const registerValidator = [
     .withMessage("Geçerli bir birim seçin.")
     .custom(async (unitId) => {
       const existingUnit = await Units.findByPk(unitId);
-      if (existingUnit) {
+      if (!existingUnit) {
         throw new CustomError(
           "Lütfen geçerli bir birim seçin",
           401,
@@ -68,7 +68,7 @@ export const registerValidator = [
     .withMessage("Geçerli bir çalışma ünvanı seçin")
     .custom(async (titleId) => {
       const existingTitle = await Title.findByPk(titleId);
-      if (existingTitle) {
+      if (!existingTitle) {
         throw new CustomError(
           "Lütfen geçerli bir çalışma ünvanı seçin",
           401,
