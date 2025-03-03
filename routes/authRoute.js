@@ -8,7 +8,7 @@ import { isAuth } from "../middlewares/isAuth.js";
 
 const router = Router();
 
-router.post("/register", registerValidator, register);
+router.post("/register", registerValidator(), register);
 router.post("/login", loginValidator, login);
 router.post("/logout", isAuth, logout);
 

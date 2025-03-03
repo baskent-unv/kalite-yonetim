@@ -1,8 +1,9 @@
 import { validationResult } from "express-validator";
 import CustomError from "../utils/CustomError.js";
 import Workplaces from "../models/workplaces.js";
-import { Op } from "sequelize";
+import { Op, Sequelize } from "sequelize";
 import wordFormatter from "../utils/wordFormatter.js";
+import Units from "../models/units.js";
 
 export const createWorkplace = async (req, res, next) => {
   const errors = validationResult(req);
@@ -29,7 +30,7 @@ export const createWorkplace = async (req, res, next) => {
       code,
     });
     return res.status(201).json({
-      message: "İşyeri başarıyla oluşturuldu",
+      message: "Merkez başarıyla oluşturuldu",
       workplace: workplace,
     });
   } catch (err) {
@@ -48,13 +49,13 @@ export const updateWorkplace = async (req, res, next) => {
   try {
     const existingWorkplace = await Workplaces.findByPk(id);
     if (!existingWorkplace) {
-      throw new CustomError("İşyeri bulunamadı", 404, "not found");
+      throw new CustomError("Merkez bulunamadı", 404, "not found");
     }
     existingWorkplace.name = name;
     existingWorkplace.code = code;
     await existingWorkplace.save();
     return res.status(200).json({
-      message: "İşyeri başarıyla güncellendi.",
+      message: "Merkez başarıyla güncellendi.",
     });
   } catch (err) {
     return next(err);
@@ -76,12 +77,12 @@ export const changeWorkplaceStatus = async (req, res, next) => {
   try {
     const existingWorkplace = await Workplaces.findByPk(id);
     if (!existingWorkplace) {
-      throw new CustomError("İşyeri bulunamadı", 404, "not found");
+      throw new CustomError("Merkez bulunamadı", 404, "not found");
     }
     existingWorkplace.status = status;
     await existingWorkplace.save();
     return res.status(200).json({
-      message: "İşyeri statüsü başarıyla güncellendi.",
+      message: "Merkez statüsü başarıyla güncellendi.",
     });
   } catch (err) {
     return next(err);
@@ -102,3 +103,35 @@ export const getWorkplaces = async (req, res, next) => {
     return next(err);
   }
 };
+
+export const deleteWorkplace = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const workplace = await Workplaces.findByPk(id);
+
+    if (!workplace) {
+      throw new CustomError(
+        "Merkez bulunamadı.",
+        404,
+        "not found"
+      );
+    }
+
+    await workplace.destroy();
+
+    return res.status(200).json({
+      message: "Merkez başarıyla silindi",
+    });
+  } catch (err) {
+    if (err instanceof Sequelize.ForeignKeyConstraintError) {
+      return next(new CustomError(
+        "Bu işyerini silmeden önce ona bağlı birimleri, kullanıcıları ve dökümanları silmelisiniz.",
+        400,
+        "foreign_key_constraint"
+      ));
+    }
+    return next(err);
+  }
+};
+

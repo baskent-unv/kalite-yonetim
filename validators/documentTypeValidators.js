@@ -8,7 +8,7 @@ import { Op } from "sequelize";
 export const documentTypeValidator = (isUpdate = false) => [
   body("name")
     .notEmpty()
-    .withMessage("Döküman tipi adı boş olamaz.")
+    .withMessage("Başlık tipi adı boş olamaz.")
     .trim()
     .custom(async (name, { req }) => {
       const { id } = req.params;
@@ -19,7 +19,7 @@ export const documentTypeValidator = (isUpdate = false) => [
         },
       });
       if (existingDocumentType) {
-        throw new CustomError("Bu döküman tipi zaten mevcut", 400, "validation");
+        throw new CustomError("Bu başlık tipi zaten mevcut", 400, "validation");
       }
     }),
 ];

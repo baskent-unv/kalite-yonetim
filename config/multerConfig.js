@@ -1,6 +1,7 @@
 import multer from "multer";
 import path from "path";
 import CustomError from "../utils/CustomError.js";
+import { formatFileName } from "../utils/formalPdfName.js";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -10,10 +11,10 @@ const storage = multer.diskStorage({
     const originalName = path.parse(file.originalname).name;
     const extension = path.extname(file.originalname);
     const uniqueSuffix = Date.now();
-
+    const formattedName = formatFileName(originalName, uniqueSuffix, extension)
     cb(
       null,
-      `${originalName.replace(/\s+/g, "-")}-${uniqueSuffix}${extension}`
+      formattedName
     );
   },
 });

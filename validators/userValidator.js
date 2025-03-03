@@ -2,17 +2,24 @@ import { body } from "express-validator";
 import User from "../models/users.js";
 import CustomError from "../utils/CustomError.js";
 import Units from "../models/units.js";
+import { Op } from "sequelize";
 import Title from "../models/titles.js";
 import Workplaces from "../models/workplaces.js";
 
-export const registerValidator = [
+export const registerValidator = (isUpdate = false) => [
   body("firstname").notEmpty().withMessage("İsim boş olamaz."),
   body("lastname").notEmpty().withMessage("Soyisim boş olamaz."),
   body("username")
     .notEmpty()
     .withMessage("Kullanıcı adı boş olamaz.")
-    .custom(async (username) => {
-      const user = await User.findOne({ username: username });
+    .custom(async (username, { req }) => {
+      const id = req.params.id;
+      const user = await User.findOne({
+        where: {
+          username: username,
+          ...(isUpdate && id ? { id: { [Op.ne]: id } } : {})
+        }
+      });
       if (user) {
         throw new CustomError("Bu kullanıcı adı zaten kullanılıyor");
       }
@@ -20,8 +27,14 @@ export const registerValidator = [
   body("email")
     .isEmail()
     .withMessage("Geçerli bir e-posta adresi girin.")
-    .custom(async (email) => {
-      const existingUser = await User.findOne({ email: email });
+    .custom(async (email, { req }) => {
+      const id = req.params.id;
+      const existingUser = await User.findOne({
+        where: {
+          email: email,
+          ...(isUpdate && id ? { id: { [Op.ne]: id } } : {})
+        }
+      });
       if (existingUser) {
         throw new CustomError(
           "Bu e-posta adresi zaten kullanılıyor.",
@@ -30,7 +43,10 @@ export const registerValidator = [
         );
       }
     }),
-  body("password").notEmpty().withMessage("Şifre boş olamaz"),
+  body("password")
+    .if(() => !isUpdate) // Sadece isUpdate false ise kontrol eder
+    .notEmpty()
+    .withMessage("Şifre boş olamaz"),
   body("workplaceId")
     .notEmpty()
     .withMessage("İşyeri boş bırakılamaz.")

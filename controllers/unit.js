@@ -96,7 +96,14 @@ export const changeUnitStatus = async (req, res, next) => {
 
 export const getUnits = async (req, res, next) => {
     try {
-        const units = await Units.findAll();
+        const units = await Units.findAll({
+            include: [
+                {
+                    model: Workplaces,
+                    attributes: ['id', 'name']
+                }
+            ]
+        });
         if (!units || units.length === 0) {
             throw new CustomError("Hiç birim bulunamadı", 404, "not found");
         }
@@ -108,3 +115,35 @@ export const getUnits = async (req, res, next) => {
         return next(err);
     }
 }
+
+export const deleteUnit = async (req, res, next) => {
+    const { id } = req.params;
+  
+    try {
+      const unit = await Units.findByPk(id);
+  
+      if (!unit) {
+        throw new CustomError(
+          "Birim bulunamadı.",
+          404,
+          "not found"
+        );
+      }
+  
+      await unit.destroy();
+  
+      return res.status(200).json({
+        message: "Birim başarıyla silindi",
+      });
+    } catch (err) {
+      if (err instanceof Sequelize.ForeignKeyConstraintError) {
+        return next(new CustomError(
+          "Bu birimi silmeden önce ona bağlı kullanıcıları ve dökümanları silmelisiniz.",
+          400,
+          "foreign_key_constraint"
+        ));
+      }
+      return next(err);
+    }
+  };
+  

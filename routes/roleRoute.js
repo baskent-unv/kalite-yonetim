@@ -9,6 +9,6 @@ const router = Router();
 router.post("/create", roleValidator(), isAuth, auditLog, createRole);
 router.put("/update/:id", roleValidator(true), isAuth, auditLog, updateRole);
 router.patch("/update-status/:id", isAuth, auditLog, changeRoleStatus);
-router.get("/", isAuth, getRoles);
+router.get("/", getRoles);
 
 export default router;

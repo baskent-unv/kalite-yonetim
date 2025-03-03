@@ -66,6 +66,17 @@ const User = sequelize.define("User", {
     allowNull: false,
     defaultValue: 1,
   },
+  adminApproval: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: 0
+  },
+  approvedUser: {
+    type: DataTypes.INTEGER,
+  },
+  approvedDate: {
+    type: DataTypes.DATE,
+  },
   resetToken: {
     type: DataTypes.STRING,
   },

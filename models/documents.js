@@ -34,7 +34,7 @@ const Documents = sequelize.define("document", {
         },
     },
     documentTypeId: {
-        // Döküman tipi kullanıcıdan istenmeyecek, eğer birim seçildiyse arka planda birime özel tip olarak seçilecek aksi halde ise genel tip olarak
+        // Başlık tipi kullanıcıdan istenmeyecek, eğer birim seçildiyse arka planda birime özel tip olarak seçilecek aksi halde ise genel tip olarak
         type: DataTypes.INTEGER,
         references: {
             model: DocumentTypes,

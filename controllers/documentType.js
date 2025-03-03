@@ -16,7 +16,7 @@ export const createDocumentType = async (req, res, next) => {
       description,
     });
     res.status(201).json({
-      message: "Döküman tipi başarıyla oluşturuldu.",
+      message: "Başlık tipi başarıyla oluşturuldu.",
       documentType: newDocumentType,
     });
   } catch (err) {
@@ -35,13 +35,13 @@ export const updateDocumentType = async (req, res, next) => {
   try {
     const exsistingDocumentType = await DocumentTypes.findByPk(id);
     if (!exsistingDocumentType) {
-      throw new CustomError('Döküman tipi bulunamadı', 404, 'not found');
+      throw new CustomError('Başlık tipi bulunamadı', 404, 'not found');
     }
     exsistingDocumentType.name = wordFormatter(name);
     exsistingDocumentType.description = description;
     await exsistingDocumentType.save();
     return res.status(200).json({
-      message: 'Döküman tipi başarıyla güncellendi'
+      message: 'Başlık tipi başarıyla güncellendi'
     })
   } catch (err) {
     return next(err);
@@ -59,12 +59,12 @@ export const changeDocumentTypeStatus = async (req, res, next) => {
   try {
     const exsistingDocumentType = await DocumentTypes.findByPk(id);
     if (!exsistingDocumentType) {
-      throw new CustomError('Döküman tipi bulunamadı', 404, 'not found');
+      throw new CustomError('Başlık tipi bulunamadı', 404, 'not found');
     }
     exsistingDocumentType.status = status;
     await exsistingDocumentType.save();
     return res.status(200).json({
-      message: 'Döküman tipi statüsü başarıyla güncellendi',
+      message: 'Başlık tipi statüsü başarıyla güncellendi',
     })
   } catch (err) {
     return next(err);
@@ -75,7 +75,7 @@ export const getDocumentTypes = async (req, res, next) => {
   try {
     const documentTypes = await DocumentTypes.findAll();
     if (!documentTypes || documentTypes.length === 0) {
-      throw new CustomError('Hiç döküman tipi bulunamadı.', 404, 'not found');
+      throw new CustomError('Hiç başlık tipi bulunamadı.', 404, 'not found');
     }
     return res.status(200).json({
       message: 'Döküman tipleri başarıyla getirildi.',
@@ -85,3 +85,34 @@ export const getDocumentTypes = async (req, res, next) => {
     return next(err);
   }
 }
+
+export const deleteDocumentType = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const documentType = await DocumentTypes.findByPk(id);
+
+    if (!documentType) {
+      throw new CustomError(
+        "Başlık tipi bulunamadı.",
+        404,
+        "not found"
+      );
+    }
+
+    await documentType.destroy();
+
+    return res.status(200).json({
+      message: "Başlık tipi başarıyla silindi",
+    });
+  } catch (err) {
+    if (err instanceof Sequelize.ForeignKeyConstraintError) {
+      return next(new CustomError(
+        "Bu başlık tipini silmeden önce ona bağlı dökümanları ve başlıklarıda silmelisiniz.",
+        400,
+        "foreign_key_constraint"
+      ));
+    }
+    return next(err);
+  }
+};
