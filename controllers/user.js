@@ -8,6 +8,7 @@ import Workplaces from "../models/workplaces.js";
 import CustomError from "../utils/CustomError.js";
 import { Sequelize } from "sequelize";
 import { validationResult } from "express-validator";
+import bcrypt from "bcryptjs";
 export const getUser = async (req, res, next) => {
     const { id } = req.params;
     try {
@@ -170,7 +171,7 @@ export const changeUserStatus = async (req, res, next) => {
     }
     try {
         const existingUser = await User.findByPk(id);
-        if(!existingUser) {
+        if (!existingUser) {
             throw new CustomError('Kullanıcı bulunamadı', 404, 'not found');
         }
         existingUser.status = status;
@@ -178,7 +179,7 @@ export const changeUserStatus = async (req, res, next) => {
         return res.status(200).json({
             message: 'Kullanıcı statüsü başarıyla değiştirildi.'
         })
-    } catch(err) {
+    } catch (err) {
         return next(err);
     }
 }
@@ -195,7 +196,7 @@ export const changeUserApproval = async (req, res, next) => {
     }
     try {
         const existingUser = await User.findByPk(id);
-        if(!existingUser) {
+        if (!existingUser) {
             throw new CustomError('Kullanıcı bulunamadı', 404, 'not found');
         }
         existingUser.adminApproval = status;
@@ -205,7 +206,7 @@ export const changeUserApproval = async (req, res, next) => {
         return res.status(200).json({
             message: 'Kullanıcı başarıyla onaylandı.'
         })
-    } catch(err) {
+    } catch (err) {
         return next(err);
     }
 }
@@ -233,6 +234,31 @@ export const deleteUser = async (req, res, next) => {
                 "foreign_key_constraint"
             ));
         }
+        return next(err);
+    }
+}
+
+export const changePassword = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        const firstMessage = errors.array()[0];
+        return next(new CustomError(firstMessage.msg, 401, 'validation'));
+    }
+    const { oldPassword, newPassword, confirmPassword } = req.body;
+    try {
+        const existingUser = await User.findByPk(req.user.id);
+        if (!existingUser || existingUser.length === 0) {
+            throw new CustomError('Kullanıcı bulunamadı, lütfen kullanıcı girişi yaparak tekrar deneyin.', 404, 'not found')
+        }
+        const isEqual = await bcrypt.compare(oldPassword, existingUser.password);
+        if (!isEqual) {
+            throw new CustomError('Mevcut parolanızı yanlış girdiniz.', 401, 'authenticate')
+        }
+        const hashedPassword = await bcrypt.hash(newPassword, 12);
+        existingUser.password = hashedPassword;
+        existingUser.save();
+        res.status(200).json({ message: 'Şifreniz başarıyla değiştirildi.' })
+    } catch (err) {
         return next(err);
     }
 }

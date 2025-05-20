@@ -104,4 +104,5 @@ User.belongsTo(Title, { foreignKey: "titleId" });
 
 Roles.hasMany(User, { foreignKey: "roleId" });
 User.belongsTo(Roles, { foreignKey: "roleId" });
+
 export default User;

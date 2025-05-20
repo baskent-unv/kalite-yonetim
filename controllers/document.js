@@ -64,33 +64,49 @@ export const uploadDocument = async (req, res, next) => {
       );
     }
     const docType = unitId ? 2 : 1;
-
-    const outputFilePath = `uploads/documents/${req.file.filename}-no-print.pdf`;
-    disablePdfPriting(filePath, outputFilePath, async (err, processedFilePath) => {
-      if (err) {
-        return next(new CustomError("PDF dosyasına yazdırma kısıtlaması eklenirken hata oluştu.", 500, "pdf_error"));
-      }
-
-      // Yeni dokümanı veritabanına kaydet
+    if (categoryId == 25) {
       const newDocument = await Documents.create({
         name: wordFormatter(name),
         categoryId,
         unitId,
         documentTypeId: docType,
         workplaceId,
-        filePath: processedFilePath, // Yazdırma kısıtlamalı dosya yolu kaydediliyor
+        filePath: filePath, // Yazdırma kısıtlamalı dosya yolu kaydediliyor
         fileSize,
       });
-
-      if (fs.existsSync(filePath)) {
-        fs.unlinkSync(filePath);
-      }
 
       return res.status(201).json({
         message: "Döküman başarıyla yüklendi ve yazdırma kısıtlaması uygulandı.",
         document: newDocument,
       });
-    });
+    } else {
+      const outputFilePath = `uploads/documents/${req.file.filename}-no-print.pdf`;
+      disablePdfPriting(filePath, outputFilePath, async (err, processedFilePath) => {
+        if (err) {
+          return next(new CustomError("PDF dosyasına yazdırma kısıtlaması eklenirken hata oluştu.", 500, "pdf_error"));
+        }
+
+        // Yeni dokümanı veritabanına kaydet
+        const newDocument = await Documents.create({
+          name: wordFormatter(name),
+          categoryId,
+          unitId,
+          documentTypeId: docType,
+          workplaceId,
+          filePath: processedFilePath, // Yazdırma kısıtlamalı dosya yolu kaydediliyor
+          fileSize,
+        });
+
+        if (fs.existsSync(filePath)) {
+          fs.unlinkSync(filePath);
+        }
+
+        return res.status(201).json({
+          message: "Döküman başarıyla yüklendi ve yazdırma kısıtlaması uygulandı.",
+          document: newDocument,
+        });
+      });
+    }
   } catch (err) {
     return next(err);
   }
@@ -175,7 +191,6 @@ export const updateDocument = async (req, res, next) => {
         });
       });
     } else {
-      console.log(unitId);
       // Dosya yoksa sadece metadata güncellenir
       existingDocument.name = wordFormatter(name);
       existingDocument.categoryId = categoryId;

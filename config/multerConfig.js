@@ -5,7 +5,11 @@ import { formatFileName } from "../utils/formalPdfName.js";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads/documents");
+    if (req.body.categoryId == 25) {
+      cb(null, "uploads/forms");
+    } else {
+      cb(null, "uploads/documents");
+    }
   },
   filename: function (req, file, cb) {
     const originalName = path.parse(file.originalname).name;
@@ -19,15 +23,35 @@ const storage = multer.diskStorage({
   },
 });
 
+const allowedMimeTypes = [
+  "application/pdf", // PDF dosyaları
+  "application/msword", // Word (.doc) dosyaları
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // Word (.docx) dosyaları
+  "application/vnd.ms-excel", // Excel (.xls) dosyaları
+  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" // Excel (.xlsx) dosyaları
+];
+
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype !== "application/pdf") {
-    return cb(
-      new CustomError(
-        "Sadece pdf türünde ki dosyaları yükleyebilirsiniz.",
-        400,
-        "validation"
-      )
-    );
+  if (req.body.categoryId == 25) {
+    if (!allowedMimeTypes.includes(file.mimetype)) {
+      return cb(
+        new CustomError(
+          "Geçersiz dosya türü. Sadece PDF, Word ve Excel dosyaları kabul edilmektedir.",
+          400,
+          "validation"
+        )
+      );
+    }
+  } else {
+    if (file.mimetype !== "application/pdf") {
+      return cb(
+        new CustomError(
+          "Sadece pdf türünde ki dosyaları yükleyebilirsiniz.",
+          400,
+          "validation"
+        )
+      );
+    }
   }
   cb(null, true);
 };

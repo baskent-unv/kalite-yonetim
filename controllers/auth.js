@@ -10,6 +10,8 @@ import jwt from "jsonwebtoken";
 import { configDotenv } from "dotenv";
 import LoginData from "../models/loginData.js";
 import Roles from "../models/roles.js";
+import { sendMail } from "../services/mailService.js";
+import ResetPassword from "../models/resetPassword.js";
 configDotenv();
 
 export const register = async (req, res, next) => {
@@ -200,3 +202,129 @@ export const logout = async (req, res, next) => {
     next(err);
   }
 };
+
+export const getResetPassword = async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const firstMessage = errors.array()[0];
+    return next(new CustomError(firstMessage.msg, 400, "validation"));
+  }
+  const { email } = req.body;
+  try {
+    const code = Math.floor(Math.random() * (9999 - 1000) + 1000);
+    const expires_at = new Date(Date.now() + 5 * 60 * 1000); // 5 dakika sonrası
+    const existingUser = await User.findOne({
+      where: {
+        email
+      }
+    })
+    if (!existingUser) {
+      throw new CustomError('Böyle bir kullanıcı bulunamadı', 404, 'not found');
+    }
+    // 5 dakika içinde gönderilmiş bir kod var mı?
+    const recentCode = await ResetPassword.findOne({
+      where: {
+        userId: existingUser.id,
+        created_at: {
+          [Op.gt]: new Date(Date.now() - 5 * 60 * 1000)
+        },
+        used: false
+      },
+      order: [['created_at', 'DESC']]
+    });
+
+    if (recentCode) {
+      throw new CustomError('Yeniden kod göndermek için 5 dakika beklemeniz gerekiyor.', 400, 'authentication');
+    }
+    await ResetPassword.create({
+      userId: existingUser.id,
+      code,
+      temp_token: crypto.randomUUID(), // Benzersiz geçici token (isteğe bağlı)
+      expires_at,
+      used: false,
+      created_at: new Date(),
+      updated_at: new Date()
+    });
+    await sendMail(email, 'Başkent Üniversitesi Ankara Hastanesi Kalite Kontrol Sistemi', './mailTemplate/reset-password.html', code)
+    return res.status(200).json({
+      message: 'Şifre sıfırlama kodu başarıyla gönderildi.',
+    })
+  } catch (err) {
+    return next(err)
+  }
+}
+
+export const verifyResetToken = async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const firstMessage = errors.array()[0];
+    return next(new CustomError(firstMessage.msg, 400, "validation"));
+  }
+  const { email, code } = req.body;
+  try {
+    const user = await User.findOne({ where: { email } });
+    if (!user) {
+      throw new CustomError('Kullanıcı bulunamadı.', 404, 'not found');
+    }
+    const resetRecord = await ResetPassword.findOne({
+      where: {
+        userId: user.id,
+        code,
+        used: false,
+        expires_at: {
+          [Op.gt]: new Date()
+        }
+      },
+      order: [['created_at', 'DESC']]
+    })
+    if (!resetRecord) {
+      throw new CustomError('Token geçersiz veya süresi dolmuş', 400, 'invalid_token')
+    }
+    return res.status(200).json({
+      message: 'Kod doğrulandı. Şifrenizi sıfırlayabilirsiniz.',
+      temp_token: resetRecord.temp_token
+    })
+  } catch (err) {
+    return next(err);
+  }
+}
+
+export const getChangePassword = async (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const firstMessage = errors.array()[0];
+    return next(new CustomError(firstMessage.msg, 400, "validation"));
+  }
+  const { token, password, confirmPassword } = req.body;
+  if (password !== confirmPassword) {
+    return next(new CustomError('Şifreler uyuşmuyor.', 400, 'validation'));
+  }
+  try {
+    const resetRecord = await ResetPassword.findOne({
+      where: {
+        temp_token: token,
+        used: false,
+        expires_at: {
+          [Op.gt]: new Date()
+        }
+      }
+    })
+    if (!resetRecord) {
+      throw new CustomError('Token geçersiz veya süresi dolmuş.', 404, 'not found');
+    }
+
+    const user = await User.findByPk(resetRecord.userId);
+    if (!user) {
+      throw new CustomError("Kullanıcı bulunamadı.", 404, "not found");
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 12);
+    user.update({ password: hashedPassword });
+    resetRecord.update({ used: true })
+    return res.status(200).json({
+      message: "Şifreniz başarıyla güncellendi"
+    });
+  } catch (err) {
+    return next(err);
+  }
+}

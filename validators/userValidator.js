@@ -97,7 +97,7 @@ export const registerValidator = (isUpdate = false) => [
 export const loginValidator = [
   body("identifier")
     .notEmpty()
-    .withMessage("E-psota veya kullanıcı adı bilgisi girilmelidir.")
+    .withMessage("E-posta veya kullanıcı adı bilgisi girilmelidir.")
     .custom((value) => {
       const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
       const isUsername = /^[a-zA-Z0-9_]+$/.test(value);
@@ -110,3 +110,30 @@ export const loginValidator = [
     }),
   body("password").notEmpty().withMessage("Parola boş olamaz."),
 ];
+
+export const resetPasswordValidator = [
+  body('oldPassword').notEmpty()
+    .withMessage("'Güncel şifre' boş bırakılamaz.")
+    .trim(),
+  body('newPassword').notEmpty()
+    .withMessage("'Yeni şifre' boş bırakılamaz.")
+    .trim(),
+  body('confirmPassword').notEmpty()
+    .withMessage("'Yeni şifre tekrar' boş bırakılamaz.")
+    .trim()
+];
+
+export const verifyTokenValidator = [
+  body('code').notEmpty().withMessage('Doğrulama Kodu boş bırakılamaz.').custom((value) => {
+    if (!/^\d{4}$/.test(value)) {
+      throw new CustomError("Doğrulama Kodu 4 haneli sayılardan oluşmalı.");
+    }
+    return true;
+  })
+];
+
+export const changePasswordValidator = [
+  body('token').notEmpty().withMessage("Token bulunamadı.").trim(),
+  body('password').notEmpty().withMessage("'Şifre' boş bırakılamaz.").trim(),
+  body('confirmPassword').notEmpty().withMessage("'Şifre Tekrar' boş bırakılamaz.")
+]
