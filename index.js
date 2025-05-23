@@ -1,5 +1,5 @@
 import express from "express";
-import { configDotenv } from "dotenv";
+import 'dotenv/config'
 import { sequelize } from "./config/dbConfig.js";
 import { fileURLToPath } from "url";
 import cors from "cors";
@@ -16,7 +16,7 @@ import userRoute from "./routes/userRoute.js";
 import path from "path";
 import { isAdmin } from "./middlewares/isAdmin.js";
 const PORT = process.env.PORT || 3005;
-configDotenv();
+
 const app = express();
 app.use(express.json());
 
@@ -45,6 +45,11 @@ app.use("/api/user", userRoute);
 
 app.use(errorHandler);
 
+app.use("/kalite", express.static(path.join(__dirname, '../client')));
+app.get("/kalite/*", (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/index.html'));
+});
+
 const syncDb = async () => {
   try {
     await sequelize.sync({ force: false });
@@ -54,7 +59,44 @@ const syncDb = async () => {
   }
 };
 
+const createUserAdmin = async () => {
+  const password = 'kalite2025';
+  const firstname = 'Admin';
+  const lastname = 'Admin';
+  const email = '-';
+  const username = 'admin';
+  const workplaceId = 1;
+  const unitId = 1;
+  const titleId = 1;
+  const roleId = 1;
+  try {
+    const adminUser = await User.findOne({ where: { username: username } });
+    if (!adminUser) {
+      const hashedPassword = await bcrypt.hash(DEFAULT_ADMIN.password, 10);
+
+      const newUser = await User.create({
+        firstname,
+        lastname,
+        email,
+        username,
+        password: hashedPassword,
+        workplaceId,
+        unitId,
+        titleId,
+        roleId
+      });
+
+      console.log('Default admin kullanıcı oluşturuldu.');
+    } else {
+      console.log('Default admin kullanıcı zaten mevcut.');
+    }
+  } catch (err) {
+    console.error('Default admin oluşturulurken hata:', err);
+  }
+}
+
 await syncDb();
+await createUserAdmin();
 app.listen(PORT, () => {
   console.log(`Sunucu ${PORT} portunda çalışıyor.`);
 });

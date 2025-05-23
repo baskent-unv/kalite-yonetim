@@ -5699,3 +5699,145 @@ Error: Yeniden kod göndermek için 5 dakika beklemeniz gerekiyor.
     at getResetPassword (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:237:13)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
 
+2025-05-23T08:42:29.751Z - ERROR: Access denied for user ''@'localhost' (using password: NO)
+SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+    at ConnectionManager.connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConnectionManager._connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+    at async ConnectionManager.getConnection (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\sequelize.js:305:26
+    at async MySQLQueryInterface.select (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async User.findAll (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async User.findOne (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:97:18)
+
+2025-05-23T08:42:35.455Z - ERROR: Access denied for user ''@'localhost' (using password: NO)
+SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+    at ConnectionManager.connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConnectionManager._connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+    at async ConnectionManager.getConnection (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\sequelize.js:305:26
+    at async MySQLQueryInterface.select (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async User.findAll (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async User.findOne (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:97:18)
+
+2025-05-23T08:42:56.295Z - ERROR: Access denied for user ''@'localhost' (using password: NO)
+SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+    at ConnectionManager.connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConnectionManager._connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+    at async ConnectionManager.getConnection (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\sequelize.js:305:26
+    at async MySQLQueryInterface.select (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async User.findAll (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async User.findOne (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:97:18)
+
+2025-05-23T08:44:28.634Z - ERROR: Access denied for user ''@'localhost' (using password: NO)
+SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+    at ConnectionManager.connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConnectionManager._connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+    at async ConnectionManager.getConnection (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\sequelize.js:305:26
+    at async MySQLQueryInterface.select (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async User.findAll (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async User.findOne (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:97:18)
+
+2025-05-23T08:44:38.680Z - ERROR: Access denied for user ''@'localhost' (using password: NO)
+SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+    at ConnectionManager.connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConnectionManager._connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+    at async ConnectionManager.getConnection (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\sequelize.js:305:26
+    at async MySQLQueryInterface.select (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async User.findAll (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async User.findOne (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:97:18)
+
+2025-05-23T08:45:59.584Z - ERROR: Access denied for user ''@'localhost' (using password: NO)
+SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+    at ConnectionManager.connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConnectionManager._connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+    at async ConnectionManager.getConnection (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\sequelize.js:305:26
+    at async MySQLQueryInterface.select (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async User.findAll (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async User.findOne (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:97:18)
+
+2025-05-23T10:01:49.620Z - ERROR: Access denied for user ''@'localhost' (using password: NO)
+SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+    at ConnectionManager.connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConnectionManager._connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+    at async ConnectionManager.getConnection (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\sequelize.js:305:26
+    at async MySQLQueryInterface.select (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async User.findAll (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async User.findOne (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:97:18)
+
+2025-05-23T10:09:34.903Z - ERROR: Access denied for user ''@'localhost' (using password: NO)
+SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+    at ConnectionManager.connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConnectionManager._connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+    at async ConnectionManager.getConnection (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\sequelize.js:305:26
+    at async MySQLQueryInterface.select (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async User.findAll (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async User.findOne (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:97:18)
+
+2025-05-23T10:10:21.438Z - ERROR: x is not defined
+ReferenceError: x is not defined
+    at file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/index.js:47:29
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\index.js:284:15
+    at param (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\index.js:365:14)
+    at param (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\index.js:376:14)
+    at Function.process_params (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\index.js:421:3)
+    at next (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\index.js:280:10)
+
+2025-05-23T10:11:27.096Z - ERROR: Access denied for user ''@'localhost' (using password: NO)
+SequelizeAccessDeniedError: Access denied for user ''@'localhost' (using password: NO)
+    at ConnectionManager.connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ConnectionManager._connect (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+    at async ConnectionManager.getConnection (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:197:7)
+    at async C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\sequelize.js:305:26
+    at async MySQLQueryInterface.select (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\dialects\abstract\query-interface.js:407:12)
+    at async User.findAll (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1140:21)
+    at async User.findOne (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\sequelize\lib\model.js:1240:12)
+    at async login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:97:18)
+
+2025-05-23T10:29:55.460Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-05-23T10:29:58.485Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-05-23T10:30:02.005Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
