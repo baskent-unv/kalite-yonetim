@@ -45,11 +45,6 @@ app.use("/api/user", userRoute);
 
 app.use(errorHandler);
 
-app.use("/kalite", express.static(path.join(__dirname, '../client')));
-app.get("/kalite/*", (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
-});
-
 const syncDb = async () => {
   try {
     await sequelize.sync({ force: false });
