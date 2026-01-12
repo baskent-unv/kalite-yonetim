@@ -15,7 +15,8 @@ import documentRoute from "./routes/documentRoute.js";
 import userRoute from "./routes/userRoute.js";
 import path from "path";
 import { isAdmin } from "./middlewares/isAdmin.js";
-const PORT = process.env.PORT || 3005;
+import User from "./models/users.js";
+const PORT = process.env.PORT || 3009;
 
 const app = express();
 app.use(express.json());

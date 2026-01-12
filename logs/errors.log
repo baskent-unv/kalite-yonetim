@@ -5841,3 +5841,172 @@ Error: Girilen şifre yanlış
 Error: Girilen şifre yanlış
     at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
 
+2025-06-19T12:55:58.504Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-06-19T12:56:01.407Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-06-19T13:12:28.277Z - ERROR: err is not defined
+ReferenceError: err is not defined
+    at uploadDocument (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:84:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-06-19T13:12:47.786Z - ERROR: err is not defined
+ReferenceError: err is not defined
+    at uploadDocument (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:84:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-09T11:14:04.884Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-09-09T11:14:08.702Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-09-09T11:14:12.939Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-09-09T11:14:23.136Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-09-09T11:14:28.068Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-09-09T11:15:34.261Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-09T11:15:36.422Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-09T11:15:37.733Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-09T11:15:41.638Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-09T11:15:42.271Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-17T09:19:17.202Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-17T09:19:17.742Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-17T09:19:18.244Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:15:09.777Z - ERROR: Bu birim ismi ve birim koduna sahip bir birim zaten var
+Error: Bu birim ismi ve birim koduna sahip bir birim zaten var
+    at unitCreate (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/unit.js:29:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:15:14.721Z - ERROR: Bu birim ismi ve birim koduna sahip bir birim zaten var
+Error: Bu birim ismi ve birim koduna sahip bir birim zaten var
+    at unitCreate (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/unit.js:29:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:15:38.408Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:15:41.391Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:15:43.110Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:15:52.446Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:16:47.804Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:16:48.682Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:16:49.603Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:16:50.275Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:16:50.730Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:16:51.339Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:16:51.908Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:16:57.381Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-09-19T12:18:26.675Z - ERROR: Geçerli bir e-posta adresi girin.
+Error: Geçerli bir e-posta adresi girin.
+    at register (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:21:17)
+    at Layer.handle [as handle_request] (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express\lib\router\route.js:149:13)
+    at middleware (C:\Users\Administrator\Desktop\kalite yönetim\backend\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2025-10-01T05:31:39.895Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
+2025-10-01T05:33:50.623Z - ERROR: Hiç döküman bulunamadı
+Error: Hiç döküman bulunamadı
+    at getDocuments (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/document.js:239:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2026-01-12T10:56:12.038Z - ERROR: Girilen şifre yanlış
+Error: Girilen şifre yanlış
+    at login (file:///C:/Users/Administrator/Desktop/kalite%20y%C3%B6netim/backend/controllers/auth.js:142:13)
+
